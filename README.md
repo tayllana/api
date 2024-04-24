@@ -1,7 +1,7 @@
-# API Notes
+# 📃 API Notes
 Este é um projeto simples de API RESTful para gerenciar notas. 
 
-## Funcionalidades
+## 📎 Funcionalidades
 
 Com esta API, é possível realizar as seguintes operações:
 
