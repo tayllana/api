@@ -1,99 +1,90 @@
-# Título do projeto
+# API Notes
+Este é um projeto simples de API RESTful para gerenciar notas. 
 
-Um parágrafo da descrição do projeto vai aqui
+## Funcionalidades
 
+Com esta API, é possível realizar as seguintes operações:
+
+- Listar todas as notas
+- Obter informações de uma nota específica
+- Inserir uma nova nota
+- Atualizar uma nota existente
+- Deletar uma nota
+  
 ## 🚀 Começando
 
 Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
 
-Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar o projeto.
-
 ### 📋 Pré-requisitos
 
-De que coisas você precisa para instalar o software e como instalá-lo?
+Para instalar e executar este software, você precisará das seguintes ferramentas:
 
-```
-Dar exemplos
-```
+- PHP 7.4 ou superior
+- phpMyAdmin (opcional, para gerenciamento de banco de dados MySQL)
+- PDO (PHP Data Objects)
+- servidor web como Apache ou Nginx
+
+Certifique-se de ter todas essas ferramentas instaladas e configuradas antes de prosseguir com a instalação do software.
 
 ### 🔧 Instalação
 
-Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
+1. Clone este repositório para sua máquina local.
 
-Diga como essa etapa será:
+| Tipo  | Link |
+| ------------- | ------------- |
+| HTTPS  | https://github.com/tayllana/api_notes.git  |
+| SSH  | git@github.com:tayllana/api_notes.git  |
+| Github CLI  | gh repo clone tayllana/api_notes  |
 
+2. Configure o banco de dados MySQL e atualize o arquivo `config.php` com suas credenciais de banco de dados.
 ```
-Dar exemplos
-```
+<?php 
+$db_host = 'localhost';
+$db_name = 'devsnotes';
+$db_user = 'root';
+$db_pass = '';
 
-E repita:
+$pdo = new PDO("mysql:dbname=$db_name;host=$db_host", $db_user, $db_pass);
 
+$array = [
+    'error' => '',
+    'result' => []
+];
 ```
-Até finalizar
-```
-
-Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
+3. Execute no banco de dedos local o [DDL](https://github.com/tayllana/api_notes/blob/main/devsnotes.sql) 
+   
+4. Execute o servidor PHP localmente.
 
 ## ⚙️ Executando os testes
 
-Explicar como executar os testes automatizados para este sistema.
+Use um cliente HTTP como Postman ou [RestTest](https://resttesttest.com/) para enviar solicitações HTTPS
 
-### 🔩 Analise os testes de ponta a ponta
+### 🔩 Endpoints
 
-Explique que eles verificam esses testes e porquê.
+| Request  | URL | Route |
+| ------------- | ------------- | ------------- |
+| GET  | api/notes  | [getAll](https://github.com/tayllana/api_notes/blob/main/api/getAll.php) |
+| GET  | /api/note/{id}  | [get](https://github.com/tayllana/api_notes/blob/main/api/get.php) |
+| POST  | /api/note  | [insert](https://github.com/tayllana/api_notes/blob/main/api/insert.php) |
+| PUT  | /api/note/{id}  | [update](https://github.com/tayllana/api_notes/blob/main/api/update.php) |
+| DELETE  | /api/note/{id}  | [delete](https://github.com/tayllana/api_notes/blob/main/api/delete.php) |
 
-```
-Dar exemplos
-```
-
-### ⌨️ E testes de estilo de codificação
-
-Explique que eles verificam esses testes e porquê.
-
-```
-Dar exemplos
-```
-
-## 📦 Implantação
-
-Adicione notas adicionais sobre como implantar isso em um sistema ativo
 
 ## 🛠️ Construído com
 
-Mencione as ferramentas que você usou para criar seu projeto
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - O framework web usado
-* [Maven](https://maven.apache.org/) - Gerente de Dependência
-* [ROME](https://rometools.github.io/rome/) - Usada para gerar RSS
-
-## 🖇️ Colaborando
-
-Por favor, leia o [COLABORACAO.md](https://gist.github.com/usuario/linkParaInfoSobreContribuicoes) para obter detalhes sobre o nosso código de conduta e o processo para nos enviar pedidos de solicitação.
-
-## 📌 Versão
-
-Nós usamos [SemVer](http://semver.org/) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](https://github.com/suas/tags/do/projeto). 
+* [PHP](https://www.php.net/) - Linguagem de programação usada
+* [xampp](https://www.apachefriends.org/pt_br/index.html) - Servidor local
+* [PHPMyAdmin](https://www.phpmyadmin.net/) - Banco de dados usado
 
 ## ✒️ Autores
-
-Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
-
-* **Um desenvolvedor** - *Trabalho Inicial* - [umdesenvolvedor](https://github.com/linkParaPerfil)
-* **Fulano De Tal** - *Documentação* - [fulanodetal](https://github.com/linkParaPerfil)
-
-Você também pode ver a lista de todos os [colaboradores](https://github.com/usuario/projeto/colaboradores) que participaram deste projeto.
-
-## 📄 Licença
-
-Este projeto está sob a licença (sua licença) - veja o arquivo [LICENSE.md](https://github.com/usuario/projeto/licenca) para detalhes.
+* **DEV** - [Tayllana Wislla](https://github.com/tayllana/)
 
 ## 🎁 Expressões de gratidão
 
 * Conte a outras pessoas sobre este projeto 📢;
-* Convide alguém da equipe para uma cerveja 🍺;
 * Um agradecimento publicamente 🫂;
 * etc.
 
 
 ---
-⌨️ com ❤️ por [Armstrong Lohãns](https://gist.github.com/lohhans) 😊
+⌨️ com ❤️ por  [Tayllana Wislla](https://github.com/tayllana/) 😊
